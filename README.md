@@ -45,4 +45,47 @@ Techniques applied:
 
 
   - **Create Model instance:**
- 
+
+**Pre-Trained Model-ResNet-50**
+
+<p align="center">
+<image src="Notebooks/images/res50.PNG" width=800px/>
+</p>
+
+The Resnet model contains blocks of convolutional layers to extract features and a classfication head, or top, which contains an average pooling layer and a fully-connected (or dense) layer. If `include_top=True` then the whole model is initialized. If `include_top=False` then only the convolutional part of the model is initialized.
+
+The keyword argument `weights='imagenet'` loads the model with weights that have been pretrainined on the imagenet dataset. This is much faster to train than initializing a model with randomly assigned weights
+
+To use ResNet-50 model as a base for transfer learning, we need to create a new model with the final layers suited to our number of classes. There are multiple ways to do this, but we will reload the model and specifiy that we only want to load the convolutional layers. `include_top=True`
+
+We use the Adam optimizer with a fairly low learning-rate. The learning-rate could perhaps be larger. But if you try and train more layers of the original base model (i.e. including conv layers as well), then the learning-rate should be quite low otherwise the pre-trained weights of the model could change too rapidly and it will be unable to learn.
+
+<p align="center">
+<image src="Notebooks/images/model.png" width=800px/>
+</p>
+
+  - **Fine-Tuning: Unlocking layers for training:**
+
+In Transfer Learning the original pre-trained model is locked or frozen during training of the new classifier. This ensures that the weights of the original model will not change. One advantage of this, is that the training of the new classifier will not propagate large gradients back through the model that may either distort its weights or cause overfitting to the new dataset.
+
+But once the new classifier has been trained we can try and gently fine-tune some of the deeper layers in the model as well. We call this Fine-Tuning.
+
+In Keras, the trainable boolean in each layer of the original model is overrided by the trainable boolean in the "meta-layer" we call conv_layer (If it is set to non-trainable).So we will enable the trainable boolean for conv_layer and all the relevant layers in the original model. This is done by changing the trainable boolean of the layers we don't want to train to False.
+
+  - **Train Model:**
+
+  - **Evaluating predictions:**
+
+After training we can also evaluate the new model's performance on the test-set using a single function call in the Keras API. However for a more comprehensive overview of our model, we use TensorFlow Profiler.
+
+<p align="center">
+<image src="Notebooks/images/evaluation.png" width=800px/>
+</p>
+
+  - **Validation:**
+
+Looks like our model learned well
+
+<p align="center">
+<image src="Notebooks/images/Validation.png" width=800px/>
+</p>
