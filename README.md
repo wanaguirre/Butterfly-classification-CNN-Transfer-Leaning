@@ -49,7 +49,7 @@ Techniques applied:
 **Pre-Trained Model-ResNet-50**
 
 <p align="center">
-<image src="Notebooks/images/res50.PNG" width=800px/>
+<image src="Notebooks/images/res50.PNG" width=900px/>
 </p>
 
 The Resnet model contains blocks of convolutional layers to extract features and a classfication head, or top, which contains an average pooling layer and a fully-connected (or dense) layer. If `include_top=True` then the whole model is initialized. If `include_top=False` then only the convolutional part of the model is initialized.
@@ -61,7 +61,7 @@ To use ResNet-50 model as a base for transfer learning, we need to create a new 
 We use the Adam optimizer with a fairly low learning-rate. The learning-rate could perhaps be larger. But if you try and train more layers of the original base model (i.e. including conv layers as well), then the learning-rate should be quite low otherwise the pre-trained weights of the model could change too rapidly and it will be unable to learn.
 
 <p align="center">
-<image src="Notebooks/images/model.png" width=800px/>
+<image src="Notebooks/images/model.png" width=500px/>
 </p>
 
   - **Fine-Tuning: Unlocking layers for training:**
@@ -79,7 +79,7 @@ In Keras, the trainable boolean in each layer of the original model is overrided
 After training we can also evaluate the new model's performance on the test-set using a single function call in the Keras API. However for a more comprehensive overview of our model, we use TensorFlow Profiler.
 
 <p align="center">
-<image src="Notebooks/images/evaluation.png" width=800px/>
+<image src="Notebooks/images/evaluation.jpg" width=600px/>
 </p>
 
   - **Validation:**
@@ -87,5 +87,5 @@ After training we can also evaluate the new model's performance on the test-set 
 Looks like our model learned well
 
 <p align="center">
-<image src="Notebooks/images/Validation.png" width=800px/>
+<image src="Notebooks/images/validation.png" width=800px/>
 </p>
