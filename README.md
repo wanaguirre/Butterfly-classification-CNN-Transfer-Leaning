@@ -18,7 +18,7 @@ Techniques applied:
 - Model evaluation
 
 <p align="center">
-<img src="https://drive.google.com/uc?id=1T7JTH3yY9aohGzF3MrW--fVA3_p2qh8X" width=300 class="center">
+<img src="Notebooks/images/Structure-of-the-ResNet-50-used-for-reservoir-recognition.png" width=300 class="center">
 </p>
 
 ---
