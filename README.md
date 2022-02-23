@@ -79,7 +79,7 @@ In Keras, the trainable boolean in each layer of the original model is overrided
 After training we can also evaluate the new model's performance on the test-set using a single function call in the Keras API. However for a more comprehensive overview of our model, we use TensorFlow Profiler.
 
 <p align="center">
-<image src="Notebooks/images/evaluation.jpg" width=600px/>
+<image src="Notebooks/images/evaluation.jpg" width=400px/>
 </p>
 
   - **Validation:**
