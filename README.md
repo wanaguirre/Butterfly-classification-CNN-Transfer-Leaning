@@ -3,7 +3,7 @@ This repository is just to show and teach some Convolutional Neural Network and 
 # Butterfly classification (CNN - Transfer Learning)
 
 <p align="center">
-<img src="Notebooks/images/butterflies.png" width=800 class="center">
+<img src="Notebooks/images/butterflies.PNG" width=800 class="center">
 </p>
   
 In this repository, and based in a huge butterfly [image classified databased](https://www.research-collection.ethz.ch/handle/20.500.11850/365379), I train a model to do this classification in a autonomous way with the best possible accuracy. To achieve this, I use the help of the Pre-Trained Model-ResNet-50, it's basically a convolutional neural network, 50 layers deep, that has been trained on more than a million images from the ImageNet database. Because this is not enough o ge my specific classification, I add some layers on top of this model, to be able to trin it and get an excellent classification result.
@@ -40,7 +40,7 @@ Techniques applied:
         The smart solution to this is to randomly augment, or edit, the images just before they are passed to the network for training. This allows us to create a theoretically infinite amount of images and also generalise the model's behaviour.
 
 <p align="center">
-<image src="Notebooks/images/butterfly augmentation.png" width=500px/>
+<image src="Notebooks/images/butterfly augmentation.png" width=800px/>
 </p>
 
 
